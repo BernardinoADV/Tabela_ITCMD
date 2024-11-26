@@ -52,11 +52,10 @@
                 <table class="min-w-full divide-y-2 divide-gray-200 dark:divide-gray-700">
                     <thead>
                         <tr class="bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800">
-                            <!-- Cabeçalhos da Tabela com Atributo scope e Tooltips -->
-                            <th scope="col" class="px-4 py-2 text-left text-xs sm:text-sm md:text-base font-semibold text-white border-r-2 border-gray-700 dark:border-gray-600 cursor-pointer" onclick="sortTable(0)" title="Clique para ordenar por Estado">Estado</th>
-                            <th scope="col" class="px-4 py-2 text-left text-xs sm:text-sm md:text-base font-semibold text-white border-r-2 border-gray-700 dark:border-gray-600 cursor-pointer" onclick="sortTable(1)" title="Clique para ordenar por Causa Mortis">Causa Mortis</th>
-                            <th scope="col" class="px-4 py-2 text-left text-xs sm:text-sm md:text-base font-semibold text-white border-r-2 border-gray-700 dark:border-gray-600 cursor-pointer" onclick="sortTable(2)" title="Clique para ordenar por Doações">Doações</th>
-                            <th scope="col" class="px-4 py-2 text-left text-xs sm:text-sm md:text-base font-semibold text-white cursor-pointer" onclick="sortTable(3)" title="Clique para ordenar por Isenções">Isenções</th>
+                            <th scope="col" class="px-4 py-2 text-left text-xs sm:text-sm font-semibold text-white border-r-2 border-gray-700 dark:border-gray-600 cursor-pointer" onclick="sortTable(0)" title="Clique para ordenar por Estado">Estado</th>
+                            <th scope="col" class="px-4 py-2 text-left text-xs sm:text-sm font-semibold text-white border-r-2 border-gray-700 dark:border-gray-600 cursor-pointer" onclick="sortTable(1)" title="Clique para ordenar por Causa Mortis">Causa Mortis</th>
+                            <th scope="col" class="px-4 py-2 text-left text-xs sm:text-sm font-semibold text-white border-r-2 border-gray-700 dark:border-gray-600 cursor-pointer" onclick="sortTable(2)" title="Clique para ordenar por Doações">Doações</th>
+                            <th scope="col" class="px-4 py-2 text-left text-xs sm:text-sm font-semibold text-white cursor-pointer" onclick="sortTable(3)" title="Clique para ordenar por Isenções">Isenções</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y-2 divide-gray-200 dark:divide-gray-700">
@@ -73,25 +72,25 @@
                                     <!-- Causa Mortis - Geral -->
                                     <div class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
                                         <p class="text-sm font-medium mb-2">Geral:</p>
-                                        <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg mb-2">
-                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-500 text-white">3%</span>
-                                            <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 32.015,00 até R$ 154.760,51</span>
+                                        <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-500 text-white">3%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 32.015,00 - R$ 154.760,51</span>
                                         </div>
-                                        <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-700 text-white">6%</span>
-                                            <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 154.760,51 até R$ 773.866,58</span>
+                                        <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg mt-2">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-600 text-white">6%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 154.760,51 - R$ 773.866,58</span>
                                         </div>
-                                        <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-700 text-white">8%</span>
-                                            <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Acima de R$ 773.866,58</span>
+                                        <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg mt-2">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-700 text-white">8%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Acima de R$ 773.866,58</span>
                                         </div>
                                     </div>
                                     <!-- Causa Mortis - Quotas de Sociedade -->
                                     <div class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
                                         <p class="text-sm font-medium mb-2">Quotas de Sociedade:</p>
-                                        <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-500 text-white">2%</span>
-                                            <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Acima de R$ 32.015,00</span>
+                                        <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-500 text-white">2%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Acima de R$ 32.015,00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -101,178 +100,167 @@
                                     <!-- Doações - Bens Imóveis -->
                                     <div class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
                                         <p class="text-sm font-medium mb-2">Bens Imóveis:</p>
-                                        <div class="space-y-2">
-                                            <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-500 text-white">2%</span>
-                                                <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 32.015,00 até R$ 441.807,00</span>
-                                            </div>
-                                            <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-600 text-white">4%</span>
-                                                <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 441.807,00 até R$ 773.866,58</span>
-                                            </div>
-                                            <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-600 text-white">6%</span>
-                                                <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 773.866,58 até R$ 1.744.689,44</span>
-                                            </div>
-                                            <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-700 text-white">8%</span>
-                                                <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Acima de R$ 1.744.689,44</span>
-                                            </div>
+                                        <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-500 text-white">2%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 32.015,00 - R$ 441.807,00</span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg mt-2">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-600 text-white">4%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 441.807,00 - R$ 773.866,58</span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg mt-2">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-600 text-white">6%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 773.866,58 - R$ 1.744.689,44</span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg mt-2">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-700 text-white">8%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Acima de R$ 1.744.689,44</span>
                                         </div>
                                     </div>
                                     <!-- Doações - Bens Móveis -->
                                     <div class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
                                         <p class="text-sm font-medium mb-2">Bens Móveis:</p>
-                                        <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-500 text-white">2%</span>
-                                            <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Acima de R$ 32.015,00</span>
+                                        <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-500 text-white">2%</span>
+                                            <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Acima de R$ 32.015,00</span>
                                         </div>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-4 py-2">
                                 <div class="p-3 bg-yellow-50 dark:bg-yellow-800 rounded-lg border-l-4 border-yellow-400">
-                                    <div class="text-sm sm:text-base text-gray-900 dark:text-gray-100">
+                                    <div class="text-sm text-gray-900 dark:text-gray-100">
                                         Transmissões até 500 UFP/SE (R$ 32.015,00)
                                     </div>
                                 </div>
                             </td>
                         </tr>
-
+            
                         <!-- Pernambuco -->
                         <tr class="hover:bg-blue-50 dark:hover:bg-blue-900 transition-colors duration-150">
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="flex items-center">
                                     <div class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                                    <!-- Link para Pernambuco -->
                                     <a href="https://www.sefaz.pe.gov.br/Servicos/ICD/Paginas/Perguntas-e-Respostas.aspx" class="font-medium text-gray-900 dark:text-gray-100 hover:underline">Pernambuco</a>
                                 </div>
                             </td>
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="space-y-2">
-                                    <!-- Escalonamento de Alíquotas para Causa Mortis -->
-                                    <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-500 text-white">2%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 72.285,13 até R$ 289.140,54</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-500 text-white">2%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 72.285,13 - R$ 289.140,54</span>
                                     </div>
-                                    <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-600 text-white">4%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 289.140,54 até R$ 433.710,81</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-600 text-white">4%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 289.140,54 - R$ 433.710,81</span>
                                     </div>
-                                    <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-700 text-white">6%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 433.710,81 até R$ 578.281,08</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-700 text-white">6%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 433.710,81 - R$ 578.281,08</span>
                                     </div>
-                                     <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-700 text-white">8%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Acima de R$ 578.281,08​</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-700 text-white">8%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Acima de R$ 578.281,08</span>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="space-y-2">
-                                    <!-- Escalonamento de Alíquotas para Doações -->
-                                 <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-500 text-white">2%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 72.285,13 até R$ 289.140,54</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-500 text-white">2%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 72.285,13 - R$ 289.140,54</span>
                                     </div>
-                                    <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-600 text-white">4%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 289.140,54 até R$ 433.710,81</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-600 text-white">4%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 289.140,54 - R$ 433.710,81</span>
                                     </div>
-                                    <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-700 text-white">6%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 433.710,81 até R$ 578.281,08</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-700 text-white">6%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 433.710,81 - R$ 578.281,08</span>
                                     </div>
-                                     <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-700 text-white">8%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Acima de R$ 578.281,08​</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-700 text-white">8%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Acima de R$ 578.281,08</span>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-4 py-2">
                                 <div class="p-3 bg-yellow-50 dark:bg-yellow-800 rounded-lg border-l-4 border-yellow-400">
-                                    <div class="text-sm sm:text-base text-gray-900 dark:text-gray-100">
+                                    <div class="text-sm text-gray-900 dark:text-gray-100">
                                         Transmissões até R$ 72.285,13
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                            
+            
                         <!-- Alagoas -->
                         <tr class="hover:bg-blue-50 dark:hover:bg-blue-900 transition-colors duration-150">
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="flex items-center">
                                     <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                                    <!-- Link para Alagoas -->
                                     <a href="https://www.sefaz.al.gov.br/itcd" class="font-medium text-gray-900 dark:text-gray-100 hover:underline">Alagoas</a>
                                 </div>
                             </td>
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="space-y-2">
-                                    <!-- Causa Mortis para Alagoas -->
-                                    <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-3 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-600 text-white">4%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Alíquota única</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-600 text-white">4%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Alíquota única</span>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="space-y-2">
-                                    <!-- Doações para Alagoas -->
-                                    <div class="flex items-center bg-green-50 dark:bg-green-800 p-3 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-600 text-white">2%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Alíquota única</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-600 text-white">2%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Alíquota única</span>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-4 py-2">
                                 <div class="p-3 bg-yellow-50 dark:bg-yellow-800 rounded-lg border-l-4 border-yellow-400">
-                                    <div class="text-sm sm:text-base text-gray-900 dark:text-gray-100">
+                                    <div class="text-sm text-gray-900 dark:text-gray-100">
                                         Conforme legislação estadual vigente
                                     </div>
                                 </div>
                             </td>
                         </tr>
-
+            
                         <!-- Bahia -->
                         <tr class="hover:bg-blue-50 dark:hover:bg-blue-900 transition-colors duration-150">
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="flex items-center">
                                     <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                    <!-- Link para Bahia -->
                                     <a href="https://www.sefaz.ba.gov.br/inspetoria-eletronica/itd/informacoes/" class="font-medium text-gray-900 dark:text-gray-100 hover:underline">Bahia</a>
                                 </div>
                             </td>
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="space-y-2">
-                                    <!-- Escalonamento de Alíquotas para Causa Mortis na Bahia -->
-                                    <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-500 text-white">4%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 100.000,00 até R$ 200.000,00</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-500 text-white">4%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 100.000,00 - R$ 200.000,00</span>
                                     </div>
-                                    <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-600 text-white">6%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">De R$ 200.001,00 até R$ 300.000,00</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-600 text-white">6%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">R$ 200.001,00 - R$ 300.000,00</span>
                                     </div>
-                                    <div class="flex items-center bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-blue-700 text-white">8%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Acima de R$ 300.000,00</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-blue-50 dark:bg-blue-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-700 text-white">8%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Acima de R$ 300.000,00</span>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-4 py-2 border-r-2 border-gray-200 dark:border-gray-700">
                                 <div class="space-y-2">
-                                    <!-- Escalonamento de Alíquotas para Doações na Bahia -->
-                                    <div class="flex items-center bg-green-50 dark:bg-green-800 p-2 rounded-lg">
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium bg-green-500 text-white">3,5%</span>
-                                        <span class="ml-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">Alíquota única</span>
+                                    <div class="flex flex-wrap items-center gap-2 bg-green-50 dark:bg-green-800 p-2 rounded-lg">
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-500 text-white">3,5%</span>
+                                        <span class="text-sm whitespace-nowrap text-gray-600 dark:text-gray-300">Alíquota única</span>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-4 py-2">
                                 <div class="p-3 bg-yellow-50 dark:bg-yellow-800 rounded-lg border-l-4 border-yellow-400">
-                                    <div class="text-sm sm:text-base text-gray-900 dark:text-gray-100">
+                                    <div class="text-sm text-gray-900 dark:text-gray-100">
                                         Espólio até R$ 100.000,00
                                     </div>
                                 </div>
