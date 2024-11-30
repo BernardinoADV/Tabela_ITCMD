@@ -9,7 +9,13 @@
     <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLLFDJPE6Q"></script>
 <script>
-    try {
+    // Definição das funções necessárias primeiro
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? match[2] : null;
+    }
+
+    function initializeAnalytics() {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -19,8 +25,12 @@
             'send_page_view': true
         });
         console.log('Google Analytics initialized successfully');
-    } catch (error) {
-        console.error('Error initializing Google Analytics:', error);
+    }
+
+    // Depois verificamos o consentimento
+    if (getCookie('cookieConsent') === 'all' || 
+        (getCookie('cookieConsent') === 'custom' && getCookie('analyticsConsent') === 'true')) {
+        initializeAnalytics();
     }
 </script>
 
@@ -40,6 +50,70 @@
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Banner de Consentimento de Cookies -->
+<div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-900 bg-opacity-95 text-white p-4 z-50 transform transition-transform duration-300 translate-y-full">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex-1">
+                <h3 class="text-lg font-semibold mb-2">🍪 Utilizamos cookies para melhorar sua experiência</h3>
+                <p class="text-sm text-gray-300 mb-2">
+                    Utilizamos cookies e tecnologias semelhantes para melhorar sua experiência em nosso site, personalizar conteúdo e anúncios, fornecer recursos de mídia social e analisar nosso tráfego.
+                </p>
+                <p class="text-sm text-gray-300">
+                    Ao clicar em "Aceitar todos", você concorda com o uso de TODOS os cookies. Você também pode visitar "Preferências de cookies" para fornecer um consentimento controlado.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 min-w-fit">
+                <button onclick="showCookiePreferences()" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition-colors">
+                    Preferências de Cookies
+                </button>
+                <button onclick="acceptAllCookies()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm transition-colors">
+                    Aceitar Todos
+                </button>
+                <button onclick="acceptEssentialCookies()" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition-colors">
+                    Apenas Essenciais
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Preferências de Cookies -->
+<div id="cookiePreferences" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg max-w-2xl w-full p-6">
+            <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Preferências de Cookies</h2>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Cookies Essenciais</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Necessários para o funcionamento básico do site. Não podem ser desativados.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" checked disabled class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Cookies Analíticos</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Nos ajudam a entender como os visitantes interagem com o site (Google Analytics).</p>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="analyticsConsent" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end space-x-3">
+                <button onclick="closeCookiePreferences()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm text-gray-800 transition-colors">
+                    Cancelar
+                </button>
+                <button onclick="saveCookiePreferences()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm text-white transition-colors">
+                    Salvar Preferências
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 min-h-screen">
         <div class="max-w-6xl mx-auto">
             <!-- Cabeçalho com Logomarca, Fundo Preto e Logomarca Aumentada -->
@@ -548,6 +622,101 @@
                 }
             }
         }
+    </script>
+        <!-- Script de Gerenciamento de Cookies -->
+    <script>
+        // 1. UTILITÁRIOS DE COOKIES
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+    
+        function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? match[2] : null;
+        }
+    
+        // 2. GERENCIAMENTO DO BANNER DE COOKIES
+        function showCookieBanner() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            if (!getCookie('cookieConsent')) {
+                cookieConsent.classList.remove('translate-y-full');
+            }
+        }
+    
+        function hideCookieBanner() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            cookieConsent.classList.add('translate-y-full');
+        }
+    
+        // 3. FUNÇÕES DE ACEITAÇÃO DE COOKIES
+        function acceptAllCookies() {
+            setCookie('cookieConsent', 'all', 365);
+            setCookie('analyticsConsent', 'true', 365);
+            hideCookieBanner();
+            initializeAnalytics();
+        }
+    
+        function acceptEssentialCookies() {
+            setCookie('cookieConsent', 'essential', 365);
+            setCookie('analyticsConsent', 'false', 365);
+            hideCookieBanner();
+            disableAnalytics();
+        }
+    
+        // 4. GERENCIAMENTO DO MODAL DE PREFERÊNCIAS
+        function showCookiePreferences() {
+            document.getElementById('cookiePreferences').classList.remove('hidden');
+            const analyticsConsent = getCookie('analyticsConsent');
+            document.getElementById('analyticsConsent').checked = analyticsConsent === 'true';
+        }
+    
+        function closeCookiePreferences() {
+            document.getElementById('cookiePreferences').classList.add('hidden');
+        }
+    
+        function saveCookiePreferences() {
+            const analyticsConsent = document.getElementById('analyticsConsent').checked;
+            setCookie('cookieConsent', 'custom', 365);
+            setCookie('analyticsConsent', analyticsConsent.toString(), 365);
+            closeCookiePreferences();
+            hideCookieBanner();
+            
+            if (analyticsConsent) {
+                initializeAnalytics();
+            } else {
+                disableAnalytics();
+            }
+        }
+    
+        // 5. FUNÇÕES DO GOOGLE ANALYTICS
+        function initializeAnalytics() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GLLFDJPE6Q', {
+                'page_title': document.title,
+                'page_location': window.location.href,
+                'send_page_view': true
+            });
+            console.log('Google Analytics initialized successfully');
+        }
+    
+        function disableAnalytics() {
+            window['ga-disable-G-GLLFDJPE6Q'] = true;
+        }
+    
+        // 6. INICIALIZAÇÃO
+        document.addEventListener('DOMContentLoaded', function() {
+            const consentStatus = getCookie('cookieConsent');
+            if (!consentStatus) {
+                showCookieBanner();
+            } else if (consentStatus === 'all' || (consentStatus === 'custom' && getCookie('analyticsConsent') === 'true')) {
+                initializeAnalytics();
+            }
+        });
     </script>
 </body>
 </html>
