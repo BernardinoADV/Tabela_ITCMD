@@ -7,13 +7,22 @@
     <title>Comparativo ITCMD - SE, PE, AL e BA</title>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LLFDJ6EQ"></script>
-    <script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GLLFDJPE6Q"></script>
+<script>
+    try {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-0LLFDJ6EQ');
-    </script>
+        gtag('config', 'G-GLLFDJPE6Q', {
+            'page_title': document.title,
+            'page_location': window.location.href,
+            'send_page_view': true
+        });
+        console.log('Google Analytics initialized successfully');
+    } catch (error) {
+        console.error('Error initializing Google Analytics:', error);
+    }
+</script>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
